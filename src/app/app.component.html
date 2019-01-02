@@ -1,16 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <base href="/">
 <div class="row">
-    <div class="col-lg-0" *ngIf="showHideSideBar">
+    <div class="col-lg-2" *ngIf="showHideSideBar">
         <app-sidebar>
         </app-sidebar>
     </div>
 
-    <div>
-        <div class="col-lg-12">
-           <app-navbar [showSideBar]="showHideSideBar"
-                        (showSideBarChange) = "onShowSideBarChange($event)"
-           ></app-navbar>
-            <app-content></app-content>
-        </div>
+
+    <div class="col-lg-10">
+        <app-navbar [showSideBar]="showHideSideBar" (showSideBarChange)="onShowSideBarChange($event)"></app-navbar>
+        <app-content></app-content>
     </div>
