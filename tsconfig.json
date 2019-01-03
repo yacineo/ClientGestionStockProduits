@@ -15,7 +15,8 @@
       "../node_modules/@types"
     ],
     "types" : [
-      "core-js"
+      "core-js",
+      "jasmine"
     ],
     "lib": [
       "es2018",
