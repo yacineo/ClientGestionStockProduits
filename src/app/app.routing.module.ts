@@ -7,6 +7,7 @@ import { ProduitResolver } from './produit/produit.resolver';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
+import { UserResolver } from './user/user.resolver';
 
 export const appRoutes: Routes = [
   {
@@ -34,6 +35,9 @@ export const appRoutes: Routes = [
       {
         path: 'user',
         component: UserComponent,
+        resolve: {
+          users: UserResolver
+        },
         outlet: "contentOutlet"
 
       }
@@ -54,7 +58,7 @@ export const appRoutes: Routes = [
     )
   ],
   exports: [RouterModule],
-  providers: [ProduitResolver]
+  providers: [ProduitResolver, UserResolver]
 })
 export class AppRoutingModule {
 

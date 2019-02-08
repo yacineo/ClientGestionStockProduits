@@ -19,6 +19,10 @@ import { AppService } from './app.service';
 import { XhrInterceptor } from './xhr.interceptor';
 import { CookieService } from 'ngx-cookie-service';
 import { UserComponent } from './user/user.component';
+import { StoreModule } from '@ngrx/store';
+import { principalReducer } from './shared/principal.reducer';
+import { UserService } from './user/user.service';
+import { CrudComponent } from './shared/crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -30,18 +34,24 @@ import { UserComponent } from './user/user.component';
     DashboardComponent,
     LoginComponent,
     HomeComponent,
-    UserComponent
+    UserComponent,
+    CrudComponent
   ],
   imports: [
     
-    BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpClientModule
+    BrowserModule, 
+    AppRoutingModule, 
+    ReactiveFormsModule, 
+    HttpClientModule,
+    StoreModule.forRoot({principal : principalReducer})
   ],
   providers: [
     ProduitMockService, 
     ProduitService,
     AppService,
     {provide  : HTTP_INTERCEPTORS, useClass : XhrInterceptor, multi :true},
-    CookieService
+    CookieService,
+    UserService
   ],
   bootstrap: [AppComponent]
  })

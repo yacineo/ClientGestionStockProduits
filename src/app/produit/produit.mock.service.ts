@@ -1,5 +1,5 @@
-import { Produit } from '../shared/produit';
 import {Injector, Injectable} from '@angular/core'
+import { Produit } from 'app/shared/produit.model';
  
 @Injectable()
 export class ProduitMockService{

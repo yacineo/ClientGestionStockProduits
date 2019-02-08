@@ -6,6 +6,6 @@ export class Produit{
                  public prixUnitaire ?: number
         )
     {
-
+ 
     }
 }
