@@ -24,7 +24,7 @@ onShowSideBarChange(showHideSideBar){
       this.router.navigateByUrl('/login');
     }
     else{
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/home/(contentOutlet:dashboard)');
     }
   }
 }
